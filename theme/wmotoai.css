@@ -1,0 +1,411 @@
+/* @theme wmotoai */
+@import "default";
+
+:root {
+  font-family: "Meiryo UI", "メイリオ", "Yu Gothic", "游ゴシック", "Hiragino Sans", "ヒラギノ角ゴ Pro W3", "Segoe UI", sans-serif;
+  --secondary: #141414;
+}
+
+section {
+  width: 1280px;
+  height: 720px;
+  background-color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  box-sizing: border-box;
+  position: relative;
+  justify-content: flex-start;
+  align-items: stretch;
+  background-image: url('../images/wmotoai_background_wave.png');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Normal slide header */
+section:not(.title):not(.section-divider) h1:first-of-type {
+  box-sizing: border-box;
+  background: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 30%, rgb(227, 243, 254) 100%);
+  font-family: "CMU Bright", "Segoe UI Semibold";
+  color: rgb(66, 62, 140);
+  width: 100%;
+  margin: 0;
+  padding: 3px;
+  height: 57px;
+  text-indent: 0.5em;
+  font-size: 32px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Logo (except title slide) */
+section:not(.title):not(.section-divider) h1:first-of-type::after {
+  content: "";
+  position: absolute;
+  top: 1px;
+  right: 20px;
+  width: 200px;
+  height: 57px; 
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position:right center;
+}
+
+/* Content container */
+section > :not(h1:first-of-type):not(footer) {
+  margin-left: 4%;
+  margin-right: 4%;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6 {
+  color: #141414;
+}
+
+h2 {
+  color: rgb(210, 67, 0);
+  font-size: 24px;
+  width: 93%;
+  border-bottom: 2px solid #D7D7D7;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+p {
+  font-size: 24px;
+  margin: 0.5em 0;
+}
+
+/* リストのフォントサイズ設定 */
+ul, ol {
+  font-size: 24px;
+}
+
+/* ネストされたリスト */
+ul ul, ul ol, ol ul, ol ol {
+  font-size: inherit;
+}
+/* Code blocks */
+code {
+  background-color: #0a0040;
+  color: #e0e0e0;
+  padding: 2px 6px;
+  border-radius: 3px;
+  font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+pre {
+  background-color: #0a0040;
+  color: #e0e0e0;
+  padding: 16px;
+  border-radius: 6px;
+  overflow-x: auto;
+  margin: 1em 0;
+}
+
+pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+
+/* Math formatting */
+.katex {
+  font: normal 1.05em KaTeX_Main, 'Times New Roman', serif;
+}
+
+/* Image centering */
+img[alt~="center"] {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Title slide specific styling */
+section.title {
+  justify-content: center;
+  align-items: center;
+  background-image: url('../images/wmotoai_top.png');
+  background-size: cover;
+  background-position: center;
+}
+
+section.title > h1 {
+  background: var(--main);
+  border-radius: 25px;
+  text-align: center;
+  width: 80%;
+  padding: 0.5em 0;
+  margin: 0 auto;
+  font-size: 48px;
+}
+
+section.title > p {
+  text-align: center;
+  margin-top: 35px;
+}
+
+/* Small text utility class */
+section.tinytext > p,
+section.tinytext > ul,
+section.tinytext > blockquote {
+  font-size: 0.65em;
+}
+
+
+/* Right-aligned images */
+img[src*="#right1"] {
+  position: absolute;
+  right: 5%;
+  height: 150px;
+  width: auto;
+  top: 30%;
+  transform: translateY(-50%);
+  margin: 1em 0;
+}
+
+img[src*="#right2"] {
+  position: absolute;
+  right: 5%;
+  height: 150px;
+  width: auto;
+  top: 70%;
+  transform: translateY(-50%);
+  margin: 1em 0;
+}
+
+/* Footer styling */
+footer {
+  box-sizing: border-box;
+  background-color: rgba(246, 246, 247, 0.3);
+  width: 100%;
+  height: 35px;
+  min-height: 35px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font: Arial;
+  color: rgb(142, 142, 142);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+footer .left-section,
+footer .center-section,
+footer .right-section {
+  flex: 1;
+  display: flex;
+}
+
+footer .left-section {
+  justify-content: flex-start;
+}
+
+footer .center-section {
+  justify-content: center;
+}
+
+footer .right-section {
+  justify-content: flex-end;
+  margin-right: 150px;
+}
+
+.footer-logo {
+  background-image: url('../images/wmoto-ai-logo-updated.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 180px;
+  height: 90%;
+  position: absolute;
+  left: 18px;
+  top: 0px;
+}
+
+section::after {
+  content: attr(data-marpit-pagination) ' / ' attr(data-marpit-pagination-total);
+  position: absolute;
+  right: 20px;
+  bottom: 4px;
+  color: rgb(84, 99, 182);
+}
+
+/* 社内環境構築スライド用スタイル */
+section.env-structure {
+  padding: 0;
+  position: relative;
+}
+
+/* 社内環境構築スライドのコンテンツ領域 */
+section.env-structure .slide-content {
+  margin: 60px 4% 40px 4%;
+  position: relative;
+}
+
+section.env-structure .blue-box {
+  background-color: #e3e8ff;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+section.env-structure .blue-text {
+  color: blue;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+section.env-structure table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0;
+}
+
+section.env-structure th {
+  background-color: #d6e6ff;
+  text-align: center;
+  padding: 10px;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+section.env-structure .phase-row td {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  padding: 10px;
+  font-size: 20px;
+}
+
+section.env-structure .phase1 {
+  background-color: #40b6dd;
+}
+
+section.env-structure .phase2 {
+  background-color: #0066cc;
+}
+
+section.env-structure .phase3 {
+  background-color: #0033cc;
+}
+
+section.env-structure .content-row td {
+  vertical-align: top;
+  padding: 15px;
+  font-size: 20px;
+}
+
+section.env-structure .content1 {
+  background-color: #40b6dd4b;
+}
+
+section.env-structure .content2 {
+  background-color: #0066cc2d;
+}
+
+section.env-structure .content3 {
+  background-color: #0033cc18;
+}
+
+section.env-structure .subtitle {
+  font-weight: bold;
+  margin: 10px 0 5px 0;
+}
+
+section.env-structure ul {
+  margin: 5px 0;
+  padding-left: 20px;
+  font-size: 24px;
+}
+
+section.env-structure li {
+  margin-bottom: 10px;
+}
+
+section.env-structure .logo-area {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  gap: 20px;
+}
+
+
+/* 矢印スタイル */
+section.env-structure .arrow-container {
+  position: relative;
+}
+
+section.env-structure .arrow {
+  position: absolute;
+  top: 61px;
+  font-size: 24px;
+  color: white;
+  z-index: 10;
+}
+
+section.env-structure .arrow1 {
+  left: 32.5%;
+}
+
+section.env-structure .arrow2 {
+  left: 65.5%;
+}
+
+section.env-structure footer {
+  z-index: 5;
+}
+
+/* Section divider slide styling */
+section.section-divider {
+  justify-content: center;
+  align-items: flex-start;
+  background-image: url('../images/wmotoai_top.png');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+section.section-divider > h1 {
+  background: none;
+  border: none;
+  border-radius: 0;
+  text-align: left;
+  width: 100%;
+  padding: 0;
+  padding-left: 80px;
+  margin: 0;
+  margin-top: 300px;
+  font-size: 56px;
+  color: #0a0040;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+  position: relative;
+  z-index: 2;
+}
+
+section.section-divider > h2 {
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  margin-top: 2em;
+  position: relative;
+  z-index: 2;
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  border: none;
+  width: auto;
+}
+
+section.section-divider > p {
+  text-align: center;
+  color: white;
+  font-size: 28px;
+  margin-top: 1em;
+  position: relative;
+  z-index: 2;
+  max-width: 80%;
+  line-height: 1.6;
+}
