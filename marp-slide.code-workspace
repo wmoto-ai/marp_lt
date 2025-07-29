@@ -1,0 +1,15 @@
+{
+	"folders": [
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"markdown.marp.themes": [
+			"./theme/wmotoai.css"
+		],
+		"files.exclude": {
+			"logseq/*": true
+		},
+	}
+}
