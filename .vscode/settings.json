@@ -1,0 +1,17 @@
+{
+  "markdown.marp.themes": [
+    "./theme/wmotoai.css"
+  ],
+  "markdown.marp.enableHtml": true,
+  "markdown.marp.exportType": "pdf",
+  "markdown.marp.pdf.noteAnnotations": false,
+  "markdown-preview-enhanced.mermaidTheme": "default",
+  "markdown-preview-enhanced.enableScriptExecution": true,
+  "markdown.marp.pdf.displayHeaderFooter": false,
+  "markdown.marp.chromePath": "",
+  "markdown.marp.puppeteerTimeout": 120000,
+  "markdown.marp.mathTypesetting": "MathJax",
+  "markdown.marp.pdf.executablePath": "",
+  "markdown.marp.html": "all",
+  "marp.cli.args": ["--html", "--allow-local-files"]
+}
